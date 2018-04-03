@@ -45,7 +45,7 @@ def create_model(model, input_size, hidden_size, num_layers):
             cells = nn.GRU(input_size=input_size, hidden_size=hidden_size, num_layers=num_layers, batch_first=True)
     if model == 'skip_lstm':
         if num_layers == 1:
-            cells = CSkipLSTMCell(input_size=input_size, hidden_size=hidden_size, batch_first = True)
+            cells = CSkipLSTMCell(input_size=input_size, hidden_size=hidden_size, batch_first = True, layer_norm=True)
         else:
             cells = CMultiSkipLSTMCell(input_size=input_size, hidden_size=hidden_size,
                                        batch_first=True, num_layers=num_layers)
