@@ -22,7 +22,7 @@ def test_shuffle():
     #random.shuffle(f)
     #train = samples[:100]
     #test = samples[100:]
-    testset = videoDataset(root="/home/xuchengming/MM18/figure-skating/c3d_feat",
+    testset = videoDataset(root="./data/c3d_feat",
                    label="./data/mini_test.txt", suffix='.npy', transform=transform, data=None)
     testLoader = torch.utils.data.DataLoader(testset,
                                       batch_size=64, shuffle=False, num_workers=0)
