@@ -4,7 +4,7 @@ import torch.nn as nn
 from torch.autograd import Variable
 from torch.nn.modules.rnn import RNNCellBase
 from torch.nn.parameter import Parameter
-from torch.nn.init import xavier_uniform
+from torch.nn.init import xavier_uniform_ as xavier_uniform
 from rnn_cells.basic_rnn_cells import BasicLSTMCell, BasicGRUCell
 from rnn_cells.skip_rnn_cells import SkipLSTMCell, SkipGRUCell, MultiSkipLSTMCell, MultiSkipGRUCell
 import math

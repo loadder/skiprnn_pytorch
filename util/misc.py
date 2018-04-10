@@ -95,3 +95,7 @@ def compute_budget_loss(model, iscuda, loss, updated_states, cost_per_sample):
             return Variable(torch.zeros(loss.shape).cuda(),requires_grad=True)
         else:
             return Variable(torch.zeros(loss.shape), requires_grad=True)
+
+
+def val_mse():
+    return nn.MSELoss()

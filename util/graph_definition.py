@@ -45,7 +45,7 @@ def create_model(model, input_size, hidden_size, num_layers):
             cells = nn.GRU(input_size=input_size, hidden_size=hidden_size, num_layers=num_layers, batch_first=True)
     if model == 'skip_lstm':
         if num_layers == 1:
-            cells = CSkipLSTMCell(input_size=input_size, hidden_size=hidden_size, batch_first = True, layer_norm=True)
+            cells = CSkipLSTMCell(input_size=input_size, hidden_size=hidden_size, batch_first = True)
         else:
             cells = CMultiSkipLSTMCell(input_size=input_size, hidden_size=hidden_size,
                                        batch_first=True, num_layers=num_layers)
@@ -67,3 +67,8 @@ def split_rnn_outputs(model, rnn_outputs):
         return rnn_outputs[0], rnn_outputs[1], rnn_outputs[2]
     else:
         return rnn_outputs[0], rnn_outputs[1], None
+
+
+def train_mse():
+    return nn.MSELoss()
+
